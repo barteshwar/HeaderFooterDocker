@@ -7,6 +7,10 @@ import os
 import subprocess
 import sys
 import gizeh
+import fontTools
+
+from fontTools.ttLib import TTFont
+font = TTFont('Oswald-Bold.ttf')
 
 """
 An alternative text clip for Moviepy, relying on Gizeh instead of ImageMagick
