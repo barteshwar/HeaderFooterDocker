@@ -205,7 +205,7 @@ def make_video(vc,ht,ft):
         header = text_clip(header_text_split,font_family="Oswald-Bold.ttf",align='center',font_height = header_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
         header_fontsize=header_fontsize+1
         print(header_fontsize)
-    header = text_clip(header_text_split,font_family=font,font_height = header_fontsize, align='center',fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
+    header = text_clip(header_text_split,font_family='Oswald-Bold.ttf',font_height = header_fontsize, align='center',fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
 
     header_y=((image_clip.h-video_clip.h)/2 - header.size[1])/2
     print(header_y)
@@ -223,7 +223,7 @@ def make_video(vc,ht,ft):
         footer = text_clip(footer_text_split, font_family="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap",align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
         footer_fontsize=footer_fontsize+1
         print(footer_fontsize)
-    footer = text_clip(footer_text_split, font_family=font,align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
+    footer = text_clip(footer_text_split, font_family='Oswald-Bold.ttf',align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
 
     footer_y=image_clip.h-(image_clip.h-video_clip.h)/2+((image_clip.h-video_clip.h)/2 - footer.size[1])/2
     footer=footer.set_position(('center', footer_y))
