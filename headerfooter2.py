@@ -9,11 +9,27 @@ import sys
 import gizeh
 import fontTools
 
-from fontTools.ttLib import TTFont
+import os
+from fontTools import ttLib
 
-font = TTFont('Oswald-Bold.ttf')
+def install_font(font_path, install_dir):
+    # Create the target directory if it doesn't exist
+    os.makedirs(install_dir, exist_ok=True)
 
-font.save('Oswald-Bold.ttf')
+    # Copy the font file to the target directory
+    font_filename = os.path.basename(font_path)
+    install_path = os.path.join(install_dir, font_filename)
+    os.system(f"cp {font_path} {install_path}")
+
+    # Refresh the font cache for the user
+    os.system("fc-cache -f -v")
+
+    print(f"Font '{font_filename}' installed successfully.")
+
+# Example usage
+font_path = "Oswald-Bold.ttf"
+install_dir = os.path.expanduser("~/.fonts")
+install_font(font_path, install_dir)
 """
 An alternative text clip for Moviepy, relying on Gizeh instead of ImageMagick
 Advantages:
