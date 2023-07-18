@@ -197,7 +197,7 @@ def make_video(vc,ht,ft):
     #header_fontheight=20
     header = text_clip(header_text_split,font_family="impact",font_height = header_fontsize, fill_color=(100,155,255)).set_duration(video_clip.duration)
 
-    while(header.size[0]<image_clip.size[0]*0.9):
+    while(header.size[0]<image_clip.size[0]*0.9 and header.size[1]<(image_clip.size[1]-video_clip.size[1])/2*0.9):
         header = text_clip(header_text_split,font_family="impact",font_height = header_fontsize, fill_color=(100,155,255)).set_duration(video_clip.duration)
         header_fontsize=header_fontsize+1
         print(header_fontsize)
