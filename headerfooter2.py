@@ -229,9 +229,9 @@ def make_video(vc,ht,ft):
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
     # Set the output file name and save the final clip
-    #output_file = "output_video.mp4"
-    #final_clip.write_videofile(output_file, codec="libx264")
-    #video_file=open("C:\\Users\\Dell\\output_video.mp4",'rb')
+    output_file = "output_video.mp4"
+    final_clip.write_videofile(output_file, codec="libx264")
+    video_file=open("output_video.mp4",'rb')
     #video_bytes = output_file.read()
     #st.video(video_bytes) 
     #video_bytes = final_clip.read()
@@ -239,7 +239,9 @@ def make_video(vc,ht,ft):
     #st.video(final_clip)
     #enter the filename with filepath
     #video_bytes = final_clip.read() #reading the file
-    st.video(final_clip) #displaying the video
+    video_bytes = video_file.read() #reading the file
+    st.video(video_bytes) #displaying the video
+    #st.video(final_clip) #displaying the video
 
 clicked = st.button('Start')
 if(clicked is True):
