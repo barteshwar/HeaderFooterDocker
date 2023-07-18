@@ -235,13 +235,13 @@ def make_video(vc,ht,ft):
     print(footer_text_split)
 
     footer_fontsize=20
-    footer = text_clip(footer_text_split,font_family="Oswald-Bold",align='center',font_height=footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
+    footer = text_clip(footer_text_split,font_family="Oswald",align='center',font_height=footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
 
     while(footer.size[0]<image_clip.size[0]*0.9 and footer.size[1]<(image_clip.size[1]-video_clip.size[1])/2*0.9 ):
-        footer = text_clip(footer_text_split, font_family="Oswald-Bold",align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
+        footer = text_clip(footer_text_split, font_family="Oswald",align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
         footer_fontsize=footer_fontsize+1
         print(footer_fontsize)
-    footer = text_clip(footer_text_split, font_family='Oswald-Bold',align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
+    footer = text_clip(footer_text_split, font_family='Oswald',align='center',font_height = footer_fontsize, fill_color=(255,255,255),stroke_width=0).set_duration(video_clip.duration)
 
     footer_y=image_clip.h-(image_clip.h-video_clip.h)/2+((image_clip.h-video_clip.h)/2 - footer.size[1])/2
     footer=footer.set_position(('center', footer_y))
