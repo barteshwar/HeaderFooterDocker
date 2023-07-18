@@ -195,13 +195,13 @@ def make_video(vc,ht,ft):
 
     header_fontsize=20
     #header_fontheight=20
-    header = text_clip(header_text_split,font_family="Oswald-Bold",align='center',font_height = header_fontsize, fill_color=(255,255,255)).set_duration(video_clip.duration)
+    header = text_clip(header_text_split,font_family="Oswald-Bold.ttf",align='center',font_height = header_fontsize, fill_color=(255,255,255)).set_duration(video_clip.duration)
 
     while(header.size[0]<image_clip.size[0]*0.9 and header.size[1]<(image_clip.size[1]-video_clip.size[1])/2*0.8):
-        header = text_clip(header_text_split,font_family="Oswald-Bold",align='center',font_height = header_fontsize, fill_color=(255,255,255)).set_duration(video_clip.duration)
+        header = text_clip(header_text_split,font_family="Oswald-Bold.ttf",align='center',font_height = header_fontsize, fill_color=(255,255,255)).set_duration(video_clip.duration)
         header_fontsize=header_fontsize+1
         print(header_fontsize)
-    header = text_clip(header_text_split,font_family="Oswald=Bold",font_height = header_fontsize, align='center',fill_color=(255,255,255)).set_duration(video_clip.duration)
+    header = text_clip(header_text_split,font_family="Oswald=Bold.ttf",font_height = header_fontsize, align='center',fill_color=(255,255,255)).set_duration(video_clip.duration)
 
     header_y=((image_clip.h-video_clip.h)/2 - header.size[1])/2
     print(header_y)
