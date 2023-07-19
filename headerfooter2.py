@@ -29,7 +29,7 @@ def install_font(font_path, install_dir):
 # Example usage
 font_path = "Oswald-Bold.ttf"
 install_dir = os.path.expanduser("~/.fonts")
-#install_font(font_path, install_dir)
+install_font(font_path, install_dir)
 """
 An alternative text clip for Moviepy, relying on Gizeh instead of ImageMagick
 Advantages:
