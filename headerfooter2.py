@@ -248,9 +248,9 @@ def make_video(vc,ht,ft,src):
 
     footer_y=image_clip.h-(image_clip.h-video_clip.h)/2+((image_clip.h-video_clip.h)/2 - footer.size[1])/2
     footer=footer.set_position(('center', footer_y))
-    if(src is not None):
+    if(src==''):
       source_fontsize=10
-      source=text_clip(src,font_family='Oswald',font_height=10, fill_color=(0, 0, 0)).set_duration(video_clip.duration)
+      source=text_clip(src,font_family='Oswald',font_height=20, fill_color=(0, 0, 0)).set_duration(video_clip.duration)
       source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
     
 
