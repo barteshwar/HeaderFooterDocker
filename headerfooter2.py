@@ -194,7 +194,7 @@ def make_video(vc,ht,ft):
 #video_clip = VideoFileClip("C:\\Users\\Dell\\Downloads\\scraper\\horz.mp4")
     install_font(font_path, install_dir)
     video_clip=vc
-    image_clip = ImageClip('black1000.jpg').set_duration(video_clip.duration)
+    image_clip = ImageClip('blue1000.jpg').set_duration(video_clip.duration)
     image_clip=image_clip.resize((video_clip.w,video_clip.w))
     print(image_clip.size)
     video_clip = video_clip.set_position(("center", "center"))
