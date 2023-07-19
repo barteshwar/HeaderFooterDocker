@@ -156,6 +156,7 @@ footer=st.text_input("Footer")
 logo_position = st.selectbox(
     'Position of logo',
     ('Top left', 'Top right', 'Bottom left','Bottom right'))
+source=st.text_input("Source text")
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
@@ -187,7 +188,7 @@ def split_two(text):
         print("i is: ",i)
 
 
-def make_video(vc,ht,ft):
+def make_video(vc,ht,ft,src):
 #age = st.slider('How old are you?', 0, 130, 25)
 #st.write("I'm ", age*2, 'years old')
 
@@ -247,9 +248,15 @@ def make_video(vc,ht,ft):
 
     footer_y=image_clip.h-(image_clip.h-video_clip.h)/2+((image_clip.h-video_clip.h)/2 - footer.size[1])/2
     footer=footer.set_position(('center', footer_y))
+    if(src is not None):
+      source_fontsize=10
+      source=text_clip(src,align='center',font_height=source_fontsize, fill_color=(0, 0, 0)).set_duration(video_clip.duration)
+      source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
+    
+
 
     # Overlay the video on the image
-    final_clip = CompositeVideoClip([image_clip, video_clip,header,footer,logo])
+    final_clip = CompositeVideoClip([image_clip, video_clip,header,footer,logo,source])
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
     # Set the output file name and save the final clip
@@ -272,6 +279,6 @@ if(clicked is True):
     
     vf = VideoFileClip(tfile.name)
     
-    make_video(vf,header,footer)
+    make_video(vf,header,footer,source)
 
     
