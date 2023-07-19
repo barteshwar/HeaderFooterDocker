@@ -123,7 +123,7 @@ def text_clip(text, font_family, align='left',
     max_line = max(len(l) for l in lines)
     W = int(max_line * font_width + 2 * stroke_width)
     H = int(len(lines) * line_height + 2 * stroke_width)
-    W_BACK=int(W/2)
+    W_BACK=int(W*0.7)
     surface = gz.Surface(width=W_BACK, height=H, bg_color=bg_color)
     xpoint = {
         'center': W/2,
