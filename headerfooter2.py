@@ -153,6 +153,9 @@ if f is not None:
 
 header=st.text_input("Header")
 footer=st.text_input("Footer")
+logo_position = st.selectbox(
+    'Position of logo',
+    ('Top left', 'Top right', 'Bottom left','Bottom_right'))
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
