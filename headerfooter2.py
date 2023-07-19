@@ -273,9 +273,9 @@ def make_video(vc,ht,ft,src):
         source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
         source_background=source_background.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20 - source.size[1]*0.1))
       if(source_position=='Bottom right'):
-        source=source.set_position((image_clip.w - 1.1*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h*2/20))
+        source=source.set_position((image_clip.w - 1.1*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
         source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
-        source_background=source_background.set_position((image_clip.w - 1.2*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h*2/20 - source.size[1]*0.1))
+        source_background=source_background.set_position((image_clip.w - 1.2*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20 - source.size[1]*0.1))
     
     if(len(src)>0):
     # Overlay the video on the image
