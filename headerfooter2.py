@@ -260,21 +260,18 @@ def make_video(vc,ht,ft,src):
       source_fontsize=image_clip.w*0.02
       source=text_clip(src,font_family='Courier',font_height=source_fontsize, fill_color=(255, 255, 255),stroke_width=0).set_duration(video_clip.duration)
       source_background=ImageClip('black1000.jpg').set_duration(video_clip.duration)
+      source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.3))
       if(source_position=='Top left'):
         source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h*2/20))
-        source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
         source_background=source_background.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h*2/20 - source.size[1]*0.1))
       if(source_position=='Top right'):
         source=source.set_position((image_clip.w - 1.1*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h*2/20))
-        source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
         source_background=source_background.set_position((image_clip.w - 1.2*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h*2/20 - source.size[1]*0.1))
       if(source_position=='Bottom left'):
         source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
-        source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
         source_background=source_background.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20 - source.size[1]*0.1))
       if(source_position=='Bottom right'):
         source=source.set_position((image_clip.w - 1.1*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
-        source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
         source_background=source_background.set_position((image_clip.w - 1.1*source.size[0],(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20 - source.size[1]*0.1))
     
     if(len(src)>0):
