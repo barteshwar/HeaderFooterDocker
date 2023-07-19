@@ -123,8 +123,8 @@ def text_clip(text, font_family, align='left',
     max_line = max(len(l) for l in lines)
     W = int(max_line * font_width + 2 * stroke_width)
     H = int(len(lines) * line_height + 2 * stroke_width)
-    W_BACK=int(W*0.7)
-    surface = gz.Surface(width=W_BACK, height=H, bg_color=bg_color)
+  
+    surface = gz.Surface(width=W, height=H, bg_color=bg_color)
     xpoint = {
         'center': W/2,
         'left': stroke_width + 1,
@@ -255,7 +255,7 @@ def make_video(vc,ht,ft,src):
    
     if(len(src)>0):
       source_fontsize=20
-      source=text_clip(src,font_family='Courier',font_height=source_fontsize, fill_color=(255, 255, 255),bg_color=(0,0,0),stroke_width=0).set_duration(video_clip.duration)
+      source=text_clip(src,font_family='Courier',font_height=source_fontsize, fill_color=(255, 255, 255),stroke_width=0).set_duration(video_clip.duration)
       source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
 
     if(len(src)>0):
