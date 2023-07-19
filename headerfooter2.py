@@ -257,7 +257,7 @@ def make_video(vc,ht,ft,src):
    
    
     if(len(src)>0):
-      source_fontsize=image_clip*0.02
+      source_fontsize=image_clip.w*0.02
       source=text_clip(src,font_family='Courier',font_height=source_fontsize, fill_color=(255, 255, 255),stroke_width=0).set_duration(video_clip.duration)
       source_background=ImageClip('black1000.jpg').set_duration(video_clip.duration)
       if(source_position=='Top left'):
