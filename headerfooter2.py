@@ -29,18 +29,7 @@ def install_font(font_path, install_dir):
 # Example usage
 font_path = "Oswald-Bold.ttf"
 install_dir = os.path.expanduser("~/.fonts")
-install_font(font_path, install_dir)
-"""
-An alternative text clip for Moviepy, relying on Gizeh instead of ImageMagick
-Advantages:
-- Super fast (20x faster)
-- no need to install imagemagick
-- full-vector graphic, no aliasing problems
-- Easier font names
-Disadvantages:
-- Requires Cairo installed
-- Doesnt support kerning (=letters spacing)
-"""
+
 
 try:
     import gizeh as gz
@@ -203,6 +192,7 @@ def make_video(vc,ht,ft):
 #st.write("I'm ", age*2, 'years old')
 
 #video_clip = VideoFileClip("C:\\Users\\Dell\\Downloads\\scraper\\horz.mp4")
+    install_font(font_path, install_dir)
     video_clip=vc
     image_clip = ImageClip('black1000.jpg').set_duration(video_clip.duration)
     image_clip=image_clip.resize((video_clip.w,video_clip.w))
