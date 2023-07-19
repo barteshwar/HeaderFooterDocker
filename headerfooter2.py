@@ -263,7 +263,7 @@ def make_video(vc,ht,ft,src):
       if(source_position=='Top left'):
         source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h*2/20))
         source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
-        source_background=source_background.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20 - source.size[1]*0.1))
+        source_background=source_background.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h*2/20 - source.size[1]*0.1))
       if(source_position=='Top right'):
         source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
         source_background=source_background.resize((source.size[0]*1.1,source.size[1]*1.2))
