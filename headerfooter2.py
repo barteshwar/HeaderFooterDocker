@@ -250,7 +250,7 @@ def make_video(vc,ht,ft,src):
     footer=footer.set_position(('center', footer_y))
     if(src is not None):
       source_fontsize=10
-      source=text_clip(src,align='center',font_height=source_fontsize, fill_color=(0, 0, 0)).set_duration(video_clip.duration)
+      source=text_clip(src,font_family='Oswald',font_height=10, fill_color=(0, 0, 0)).set_duration(video_clip.duration)
       source=source.set_position((image_clip.w/100,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*2/20))
     
 
@@ -274,7 +274,7 @@ def make_video(vc,ht,ft,src):
     st.video(video_bytes) #displaying the video
     #st.video(final_clip) #displaying the video
 
-clicked = st.button('Start')
+clicked = st.button('Create Video')
 if(clicked is True):
     
     vf = VideoFileClip(tfile.name)
