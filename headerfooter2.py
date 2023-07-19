@@ -201,7 +201,7 @@ def make_video(vc,ht,ft):
         image_clip=image_clip.resize((video_clip.w,video_clip.w))
     print(image_clip.size)
     video_clip = video_clip.set_position(("center", "center"))
-    logo=ImageClip('IC-logo.jpg').set_duration(video_clip.duration)
+    logo=ImageClip('IC-logo.png').set_duration(video_clip.duration)
     logo=logo.resize((image_clip.w/8,logo.h*logo.h/(image_clip.w/8)))
     logo=logo.set_position((image_clip.w/10,(image_clip.h-video_clip.h)/2)+video_clip.h/8)
 
