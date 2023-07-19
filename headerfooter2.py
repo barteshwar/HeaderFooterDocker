@@ -203,7 +203,7 @@ def make_video(vc,ht,ft):
     video_clip = video_clip.set_position(("center", "center"))
     logo=ImageClip('IC-logo.png').set_duration(video_clip.duration)
     logo=logo.resize(width=image_clip.w/8)
-    logo=logo.set_position((image_clip.w/10,(image_clip.h-video_clip.h)/2+video_clip.h/8))
+    logo=logo.set_position((image_clip.w/15,(image_clip.h-video_clip.h)/2+video_clip.h/15))
 
     header_text=ht
     #header_text="THE HEADER FOOTER TOOL ALLOWS ANYONE TO ADD TEXT TO A VIDEO"
