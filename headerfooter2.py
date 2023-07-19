@@ -206,7 +206,7 @@ def make_video(vc,ht,ft):
     if(logo_position=='Top left'):
       logo=logo.set_position((image_clip.w/25,(image_clip.h-video_clip.h)/2+video_clip.h/20))
     if(logo_position=='Top right'):
-      logo=logo.set_position((image_clip.w*22/25,(image_clip.h-video_clip.h)/2+video_clip.h/20))
+      logo=logo.set_position((image_clip.w*20/25,(image_clip.h-video_clip.h)/2+video_clip.h/20))
     header_text=ht
     #header_text="THE HEADER FOOTER TOOL ALLOWS ANYONE TO ADD TEXT TO A VIDEO"
     header_text_split=split_two(header_text)
