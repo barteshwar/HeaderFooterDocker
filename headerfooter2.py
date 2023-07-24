@@ -148,8 +148,9 @@ st.title('Add header and footer')
 f = st.file_uploader("Upload file",type=['mp4'])
 
 if f is not None:
-  tfile = tempfile.NamedTemporaryFile(delete=False)
-  tfile.write(f.read())
+  f.write('video.mp4')
+  #tfile = tempfile.NamedTemporaryFile(delete=False)
+  #tfile.write(f.read())
   st.video(f)
 
 header=st.text_input("Header")
@@ -306,8 +307,9 @@ def make_video(vc,ht,ft,src):
 clicked = st.button('Create Video')
 if(clicked is True):
     
-    vf = VideoFileClip(tfile.name)
+  #vf = VideoFileClip(tfile.name)
+  vf = VideoFileClip('video.mp4')
     
-    make_video(vf,header,footer,source)
+  make_video(vf,header,footer,source)
 
     
