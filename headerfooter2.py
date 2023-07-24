@@ -195,7 +195,7 @@ def split_two(text):
         print("i is: ",i)
 
 
-def make_video(vc,ht,ft,src):
+def make_video(vc,src):
 #age = st.slider('How old are you?', 0, 130, 25)
 #st.write("I'm ", age*2, 'years old')
 
@@ -221,7 +221,7 @@ def make_video(vc,ht,ft,src):
     if(logo_position=='Bottom right'):
       logo=logo.set_position((image_clip.w*21/25,(image_clip.h-video_clip.h)/2 + video_clip.h - video_clip.h*4/20))
     
-    header_text=ht
+    header_text=header
     #header_text="THE HEADER FOOTER TOOL ALLOWS ANYONE TO ADD TEXT TO A VIDEO"
     if(' ' in header_text):
       header_text=split_two(header_text)
@@ -242,7 +242,7 @@ def make_video(vc,ht,ft,src):
     print(header_y)
     header=header.set_position(('center', header_y))
 
-    footer_text=ft
+    footer_text=footer
     #footer_text="WHAT AN AMAZING NEW INNOVATION!"
     if(' ' in footer_text):
       footer_text=split_two(footer_text)
@@ -312,6 +312,6 @@ if(clicked is True):
   vf = VideoFileClip(tfile.name)
   #vf = VideoFileClip('video.mp4')
     
-  make_video(vf,header,footer,source)
+  make_video(vf,source)
 
     
