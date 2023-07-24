@@ -207,8 +207,9 @@ def make_video(vc,ht,ft,src):
         video_clip=video_clip.resize((image_clip.w,video_clip.h*video_clip.h/image_clip.w))
     else:
         image_clip=image_clip.resize((video_clip.w,video_clip.w))
-    print(image_clip.size)
+    print(video_clip.size)
     video_clip = video_clip.set_position(("center", "center"))
+    
     logo=ImageClip('IC-logo.png').set_duration(video_clip.duration)
     logo=logo.resize(width=image_clip.w/8)
     if(logo_position=='Top left'):
@@ -237,6 +238,7 @@ def make_video(vc,ht,ft,src):
     header = text_clip(header_text,font_family="Oswald",font_height = header_fontsize, align='center',fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
 
     header_y=((image_clip.h-video_clip.h)/2 - header.size[1])/2
+    print(image_clip.h,video_clip.h,header.size[1])
     print(header_y)
     header=header.set_position(('center', header_y))
 
