@@ -148,7 +148,7 @@ st.title('Add header and footer')
 f = st.file_uploader("Upload file",type=['mp4'])
 
 if f is not None:
-  f.write('video.mp4')
+  #f.write('video.mp4')
   tfile = tempfile.NamedTemporaryFile(delete=False)
   tfile.write(f.read())
   st.video(tfile)
