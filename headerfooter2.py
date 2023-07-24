@@ -161,7 +161,7 @@ logo_position = st.selectbox(
 source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
-    ('Top left', 'Top right', 'Bottom left','Bottom right'))
+    ('Bottom left', 'Bottom right', 'Top left','Top right'))
 #start_time = st.number_input('Start time')
 #end_time = st.number_input('End time')
 
