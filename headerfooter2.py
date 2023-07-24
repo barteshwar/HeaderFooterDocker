@@ -151,7 +151,7 @@ if f is not None:
   #f.write('video.mp4')
   tfile = tempfile.NamedTemporaryFile(delete=False)
   tfile.write(f.read())
-  st.video(tfile)
+  st.video(f)
 
 header=st.text_input("Header")
 footer=st.text_input("Footer")
