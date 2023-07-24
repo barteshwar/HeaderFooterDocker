@@ -148,6 +148,7 @@ st.title('Add header and footer')
 f = st.file_uploader("Upload file",type=['mp4'])
 
 if f is not None:
+  #f.write('video.mp4')
   tfile = tempfile.NamedTemporaryFile(delete=False)
   tfile.write(f.read())
   st.video(f)
@@ -160,7 +161,9 @@ logo_position = st.selectbox(
 source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
-    ('Top left', 'Top right', 'Bottom left','Bottom right'))
+    ('Bottom left', 'Bottom right', 'Top left','Top right'))
+#start_time = st.number_input('Start time')
+#end_time = st.number_input('End time')
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
@@ -204,8 +207,9 @@ def make_video(vc,ht,ft,src):
         video_clip=video_clip.resize((image_clip.w,video_clip.h*video_clip.h/image_clip.w))
     else:
         image_clip=image_clip.resize((video_clip.w,video_clip.w))
-    print(image_clip.size)
+    print(video_clip.size)
     video_clip = video_clip.set_position(("center", "center"))
+    
     logo=ImageClip('IC-logo.png').set_duration(video_clip.duration)
     logo=logo.resize(width=image_clip.w/8)
     if(logo_position=='Top left'):
@@ -219,36 +223,39 @@ def make_video(vc,ht,ft,src):
     
     header_text=ht
     #header_text="THE HEADER FOOTER TOOL ALLOWS ANYONE TO ADD TEXT TO A VIDEO"
-    header_text_split=split_two(header_text)
-    print(header_text_split)
+    if(' ' in header_text):
+      header_text=split_two(header_text)
+    print(header_text)
 
     header_fontsize=20
     #header_fontheight=20
-    header = text_clip(header_text_split,font_family="Oswald-",align='center',font_height = header_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+    header = text_clip(header_text,font_family="Oswald-",align='center',font_height = header_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
 
     while(header.size[0]<image_clip.size[0]*0.9 and header.size[1]<(image_clip.size[1]-video_clip.size[1])/2*0.8):
-        header = text_clip(header_text_split,font_family="Oswald",align='center',font_height = header_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+        header = text_clip(header_text,font_family="Oswald",align='center',font_height = header_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
         header_fontsize=header_fontsize+1
         print(header_fontsize)
-    header = text_clip(header_text_split,font_family="Oswald",font_height = header_fontsize, align='center',fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+    header = text_clip(header_text,font_family="Oswald",font_height = header_fontsize, align='center',fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
 
     header_y=((image_clip.h-video_clip.h)/2 - header.size[1])/2
+    print(image_clip.h,video_clip.h,header.size[1])
     print(header_y)
     header=header.set_position(('center', header_y))
 
     footer_text=ft
     #footer_text="WHAT AN AMAZING NEW INNOVATION!"
-    footer_text_split=split_two(footer_text)
-    print(footer_text_split)
+    if(' ' in footer_text):
+      footer_text=split_two(footer_text)
+    print(footer_text)
 
     footer_fontsize=20
-    footer = text_clip(footer_text_split,font_family="Oswald",align='center',font_height=footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+    footer = text_clip(footer_text,font_family="Oswald",align='center',font_height=footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
 
     while(footer.size[0]<image_clip.size[0]*0.9 and footer.size[1]<(image_clip.size[1]-video_clip.size[1])/2*0.9 ):
-        footer = text_clip(footer_text_split, font_family="Oswald",align='center',font_height = footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+        footer = text_clip(footer_text, font_family="Oswald",align='center',font_height = footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
         footer_fontsize=footer_fontsize+1
         print(footer_fontsize)
-    footer = text_clip(footer_text_split, font_family='Oswald',align='center',font_height = footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
+    footer = text_clip(footer_text, font_family='Oswald',align='center',font_height = footer_fontsize, fill_color=(255, 165, 0),stroke_width=0).set_duration(video_clip.duration)
 
     footer_y=image_clip.h-(image_clip.h-video_clip.h)/2+((image_clip.h-video_clip.h)/2 - footer.size[1])/2
     footer=footer.set_position(('center', footer_y))
@@ -282,9 +289,11 @@ def make_video(vc,ht,ft,src):
     
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
+    #final_clip=final_clip.subclip(start_time,end_time)
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
-    final_clip.write_videofile(output_file, codec="libx264")
+    #final_clip.write_videofile(output_file, codec="libx264")
+    final_clip.write_videofile(output_file)
     video_file=open("output_video.mp4",'rb')
     #video_bytes = output_file.read()
     #st.video(video_bytes) 
@@ -300,8 +309,9 @@ def make_video(vc,ht,ft,src):
 clicked = st.button('Create Video')
 if(clicked is True):
     
-    vf = VideoFileClip(tfile.name)
+  vf = VideoFileClip(tfile.name)
+  #vf = VideoFileClip('video.mp4')
     
-    make_video(vf,header,footer,source)
+  make_video(vf,header,footer,source)
 
     
