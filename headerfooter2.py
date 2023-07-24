@@ -161,8 +161,8 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Top left', 'Top right', 'Bottom left','Bottom right'))
-start_time = st.number_input('Start time')
-end_time = st.number_input('End time')
+#start_time = st.number_input('Start time')
+#end_time = st.number_input('End time')
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
@@ -284,7 +284,7 @@ def make_video(vc,ht,ft,src):
     
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
-    final_clip=final_clip.subclip(start_time,end_time)
+    #final_clip=final_clip.subclip(start_time,end_time)
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
     final_clip.write_videofile(output_file, codec="libx264")
