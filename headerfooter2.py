@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from moviepy.editor import VideoFileClip, ImageClip, TextClip, CompositeVideoClip
+from moviepy.editor import VideoFileClip, ImageClip, TextClip, CompositeVideoClip, concatenate_videoclips
 import tempfile
 import os
 import subprocess
