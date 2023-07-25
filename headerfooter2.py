@@ -162,8 +162,8 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
-#start_time = st.number_input('Start time')
-#end_time = st.number_input('End time')
+start_time = st.number_input('Start time')
+end_time = st.number_input('End time')
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
