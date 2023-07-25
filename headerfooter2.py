@@ -164,10 +164,16 @@ source_position = st.selectbox(
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
 edit=st.checkbox('Edit Video')
 if(edit):
-  start_time1 = st.number_input('Start time1')
-  end_time1 = st.number_input('End time1')
-  start_time2 = st.number_input('Start time2')
-  end_time1 = st.number_input('End time2')
+  col1, col2 = st.columns(2)
+
+with col1:
+   start_time1 = st.number_input('Start time1')
+   start_time2 = st.number_input('Start time2')
+
+with col2:
+   end_time1 = st.number_input('End time1')
+   end_time1 = st.number_input('End time2')
+
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
