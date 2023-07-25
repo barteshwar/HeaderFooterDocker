@@ -166,11 +166,11 @@ edit=st.checkbox('Edit Video')
 if(edit):
   col1, col2 = st.columns(2)
 
-with col1:
+  with col1:
    start_time1 = st.number_input('Start time1')
    start_time2 = st.number_input('Start time2')
 
-with col2:
+  with col2:
    end_time1 = st.number_input('End time1')
    end_time1 = st.number_input('End time2')
 
