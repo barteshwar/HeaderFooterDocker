@@ -162,8 +162,12 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
-start_time = st.number_input('Start time')
-end_time = st.number_input('End time')
+edit=st.checkbox('Edit Video')
+if(edit):
+  start_time1 = st.number_input('Start time1')
+  end_time1 = st.number_input('End time1')
+  start_time2 = st.number_input('Start time2')
+  end_time1 = st.number_input('End time2')
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
