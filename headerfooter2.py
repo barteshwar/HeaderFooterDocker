@@ -303,7 +303,9 @@ def make_video(vc,ht,ft,src):
     
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
-    #final_clip=final_clip.subclip(start_time,end_time)
+    clip1=final_clip.subclip(start_time1,end_time1)
+    clip2=final_clip.subclip(start_time2,end_time2)
+    final_clip=concatenate_videoclips([clip1, clip2], method="compose")
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
     #final_clip.write_videofile(output_file, codec="libx264")
