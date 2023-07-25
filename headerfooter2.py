@@ -202,12 +202,15 @@ def make_video(vc,ht,ft,src):
 #video_clip = VideoFileClip("C:\\Users\\Dell\\Downloads\\scraper\\horz.mp4")
     install_font(font_path, install_dir)
     video_clip=vc
+    print("video clip size",video_clip.size)
+  
     image_clip = ImageClip('blue1000.jpg').set_duration(video_clip.duration)
+    print("image clip size",image_clip.size)
     if(video_clip.w>image_clip.w):
         video_clip=video_clip.resize((image_clip.w,video_clip.h*video_clip.h/image_clip.w))
     else:
         image_clip=image_clip.resize((video_clip.w,video_clip.w))
-    print(video_clip.size)
+    print("video clip size",video_clip.size)
     video_clip = video_clip.set_position(("center", "center"))
     
     logo=ImageClip('IC-logo.png').set_duration(video_clip.duration)
