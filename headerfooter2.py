@@ -172,7 +172,7 @@ if(edit):
 
   with col2:
    end_time1 = st.number_input('End time1')
-   end_time1 = st.number_input('End time2')
+   end_time2 = st.number_input('End time2')
 
 
 def replace_character(string, index, new_char):
