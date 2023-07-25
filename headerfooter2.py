@@ -315,7 +315,7 @@ if(clicked is True):
     
   vf = VideoFileClip(tfile.name)
   #vf = VideoFileClip('video.mp4')
-    
+  print('create video clicked')
   make_video(vf,header,footer,source)
 
     
