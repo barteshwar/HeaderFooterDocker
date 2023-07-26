@@ -184,13 +184,13 @@ if(edit):
 
 audio=st.checkbox('Add audio')
 if(audio):
-   audio_file = st.file_uploader("Upload file",type=['mp3'])
+  audio_file = st.file_uploader("Upload file",type=['mp3'])
 
-if audio_file is not None:
+  if(audio_file is not None):
   #f.write('video.mp4')
-  t_audio_file = tempfile.NamedTemporaryFile(delete=False)
-  t_audio_file.write(audio_file.read())
-  st.audio(t_audio_file)
+    t_audio_file = tempfile.NamedTemporaryFile(delete=False)
+    t_audio_file.write(audio_file.read())
+    st.audio(t_audio_file)
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
