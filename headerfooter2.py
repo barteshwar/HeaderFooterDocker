@@ -216,7 +216,7 @@ def convert_to_sec(time):
    if (":" in time):
       ind=time.find(':')
       minutes = int(time[0:ind])
-      seconds = int(time[ind+1,len(time)])
+      seconds = int(time[ind+1:len(time)])
       return minutes*60+seconds
    else:
       return int(time)
