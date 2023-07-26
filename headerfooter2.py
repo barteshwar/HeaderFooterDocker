@@ -167,20 +167,20 @@ if(edit):
   col1, col2 = st.columns(2)
 
   with col1:
-   start_time1 = st.text_input('Start time 1')
-   start_time2 = st.text_input('Start time 2')
-   start_time3 = st.text_input('Start time 3')
-   start_time4 = st.text_input('Start time 4')
-   start_time5 = st.text_input('Start time 5')
-   start_time6 = st.text_input('Start time 6')
+   start_time1 = st.text_input('Start time 1',value='0')
+   start_time2 = st.text_input('Start time 2',value='0')
+   start_time3 = st.text_input('Start time 3',value='0')
+   start_time4 = st.text_input('Start time 4',value='0')
+   start_time5 = st.text_input('Start time 5',value='0')
+   start_time6 = st.text_input('Start time 6',value='0')
 
   with col2:
-   end_time1 = st.text_input('End time 1')
-   end_time2 = st.text_input('End time 2')
-   end_time3 = st.text_input('End time 3')
-   end_time4 = st.text_input('End time 4')
-   end_time5 = st.text_input('End time 5')
-   end_time6 = st.text_input('End time 6')
+   end_time1 = st.text_input('End time 1',value='0')
+   end_time2 = st.text_input('End time 2',value='0')
+   end_time3 = st.text_input('End time 3',value='0')
+   end_time4 = st.text_input('End time 4',value='0')
+   end_time5 = st.text_input('End time 5',value='0')
+   end_time6 = st.text_input('End time 6',value='0')
 
 
 def replace_character(string, index, new_char):
