@@ -327,7 +327,7 @@ def make_video(vc,ht,ft,src):
       clip3=final_clip.subclip(convert_to_sec(start_time3),convert_to_sec(end_time3))
       clip4=final_clip.subclip(convert_to_sec(start_time4),convert_to_sec(end_time4))
       clip5=final_clip.subclip(convert_to_sec(start_time5),convert_to_sec(end_time5))
-      clip6=final_clip.subclip((convert_to_sec(start_time6),convert_to_sec(end_time6))
+      clip6=final_clip.subclip(convert_to_sec(start_time6),convert_to_sec(end_time6))
       final_clip=concatenate_videoclips([clip1, clip2,clip3,clip4,clip5,clip6], method="compose")
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
