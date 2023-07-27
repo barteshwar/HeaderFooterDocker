@@ -2,5 +2,5 @@ moviepy==1.0.0
 Pillow==9.5.0
 gizeh
 fonttools
-ffmpeg
+ffmpeg --upgrade
 decorator==4.0.2
