@@ -331,6 +331,7 @@ def make_video(vc,ht,ft,src):
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
     if(edit):
+      
       clip1=final_clip.subclip(convert_to_sec(start_time1),convert_to_sec(end_time1))
       clip2=final_clip.subclip(convert_to_sec(start_time2),convert_to_sec(end_time2))
       clip3=final_clip.subclip(convert_to_sec(start_time3),convert_to_sec(end_time3))
@@ -356,6 +357,7 @@ def make_video(vc,ht,ft,src):
 
 clicked = st.button('Create Video')
 if(clicked is True):
+  
   vf = VideoFileClip(tfile.name)
   #vf = VideoFileClip('video.mp4')
   print('create video clicked')
