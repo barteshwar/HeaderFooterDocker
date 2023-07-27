@@ -162,6 +162,7 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
+'''
 edit=st.checkbox('Edit Video')
 if(edit):
   col1, col2 = st.columns(2)
@@ -181,7 +182,7 @@ if(edit):
    end_time4 = st.text_input('End time 4',value='0')
    end_time5 = st.text_input('End time 5',value='0')
    end_time6 = st.text_input('End time 6',value='0')
-
+'''
 #audio=st.checkbox('Add audio')
 #if(audio):
 #  audio_file = st.file_uploader("Upload file",type=['mp3'])
@@ -330,6 +331,7 @@ def make_video(vc,ht,ft,src):
     
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
+    '''
     if(edit):
       
       clip1=final_clip.subclip(convert_to_sec(start_time1),convert_to_sec(end_time1))
@@ -339,6 +341,7 @@ def make_video(vc,ht,ft,src):
       clip5=final_clip.subclip(convert_to_sec(start_time5),convert_to_sec(end_time5))
       clip6=final_clip.subclip(convert_to_sec(start_time6),convert_to_sec(end_time6))
       final_clip=concatenate_videoclips([clip1, clip2,clip3,clip4,clip5,clip6], method="compose")
+    '''
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
     #final_clip.write_videofile(output_file, codec="libx264")
