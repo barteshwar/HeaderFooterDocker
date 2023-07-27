@@ -2,4 +2,4 @@ moviepy
 Pillow==9.5.0
 gizeh
 fonttools
-ffmpeg
+ffmpeg==4.4.4
