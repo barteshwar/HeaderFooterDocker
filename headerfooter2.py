@@ -356,7 +356,6 @@ def make_video(vc,ht,ft,src):
 
 clicked = st.button('Create Video')
 if(clicked is True):
-    
   vf = VideoFileClip(tfile.name)
   #vf = VideoFileClip('video.mp4')
   print('create video clicked')
