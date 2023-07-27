@@ -345,7 +345,7 @@ def make_video(vc,ht,ft,src):
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
     #final_clip.write_videofile(output_file, codec="libx264")
-    final_clip.write_videofile(output_file,fps=final_clip.fps)
+    final_clip.write_videofile(output_file)
     video_file=open("output_video.mp4",'rb')
     #video_bytes = output_file.read()
     #st.video(video_bytes) 
