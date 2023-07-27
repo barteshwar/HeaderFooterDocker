@@ -162,7 +162,7 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
-'''
+
 edit=st.checkbox('Edit Video')
 if(edit):
   col1, col2 = st.columns(2)
@@ -182,16 +182,16 @@ if(edit):
    end_time4 = st.text_input('End time 4',value='0')
    end_time5 = st.text_input('End time 5',value='0')
    end_time6 = st.text_input('End time 6',value='0')
-'''
-#audio=st.checkbox('Add audio')
-#if(audio):
-#  audio_file = st.file_uploader("Upload file",type=['mp3'])
 
-#  if(audio_file is not None):
-  #f.write('video.mp4')
-#    t_audio_file = tempfile.NamedTemporaryFile(delete=False)
-#    t_audio_file.write(audio_file.read())
-#    st.audio(t_audio_file)
+audio=st.checkbox('Add audio')
+if(audio):
+  audio_file = st.file_uploader("Upload file",type=['mp3'])
+
+  if(audio_file is not None):
+    f.write('video.mp4')
+    t_audio_file = tempfile.NamedTemporaryFile(delete=False)
+    t_audio_file.write(audio_file.read())
+    st.audio(t_audio_file)
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
