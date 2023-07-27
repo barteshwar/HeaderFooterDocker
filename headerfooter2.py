@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from moviepy.editor import VideoFileClip, ImageClip, TextClip, CompositeVideoClip, concatenate_videoclips
+from moviepy.editor import VideoFileClip, ImageClip, TextClip, CompositeVideoClip
 import tempfile
 import os
 import subprocess
@@ -162,36 +162,8 @@ source=st.text_input("Source text")
 source_position = st.selectbox(
     'Position of source',
     ('Bottom left', 'Bottom right', 'Top left','Top right'))
-
-edit=st.checkbox('Edit Video')
-if(edit):
-  col1, col2 = st.columns(2)
-
-  with col1:
-   start_time1 = st.text_input('Start time 1',value='0')
-   start_time2 = st.text_input('Start time 2',value='0')
-   start_time3 = st.text_input('Start time 3',value='0')
-   start_time4 = st.text_input('Start time 4',value='0')
-   start_time5 = st.text_input('Start time 5',value='0')
-   start_time6 = st.text_input('Start time 6',value='0')
-
-  with col2:
-   end_time1 = st.text_input('End time 1',value='0')
-   end_time2 = st.text_input('End time 2',value='0')
-   end_time3 = st.text_input('End time 3',value='0')
-   end_time4 = st.text_input('End time 4',value='0')
-   end_time5 = st.text_input('End time 5',value='0')
-   end_time6 = st.text_input('End time 6',value='0')
-
-audio=st.checkbox('Add audio')
-if(audio):
-  audio_file = st.file_uploader("Upload file",type=['mp3'])
-
-  if(audio_file is not None):
-    f.write('video.mp4')
-    t_audio_file = tempfile.NamedTemporaryFile(delete=False)
-    t_audio_file.write(audio_file.read())
-    st.audio(t_audio_file)
+#start_time = st.number_input('Start time')
+#end_time = st.number_input('End time')
 
 def replace_character(string, index, new_char):
         # Check if the index is within the bounds of the string
@@ -221,16 +193,6 @@ def split_two(text):
             return text
         i=i+1
         print("i is: ",i)
-
-def convert_to_sec(time):
-   if (":" in time):
-      ind=time.find(':')
-      minutes = int(time[0:ind])
-      seconds = int(time[ind+1:len(time)])
-      return minutes*60+seconds
-   else:
-      return int(time)
-      
 
 
 def make_video(vc,ht,ft,src):
@@ -331,21 +293,11 @@ def make_video(vc,ht,ft,src):
     
     final_clip.set_duration(video_clip.duration)
     print(final_clip.size)
-    
-    if(edit):
-      
-      clip1=final_clip.subclip(convert_to_sec(start_time1),convert_to_sec(end_time1))
-      clip2=final_clip.subclip(convert_to_sec(start_time2),convert_to_sec(end_time2))
-      clip3=final_clip.subclip(convert_to_sec(start_time3),convert_to_sec(end_time3))
-      clip4=final_clip.subclip(convert_to_sec(start_time4),convert_to_sec(end_time4))
-      clip5=final_clip.subclip(convert_to_sec(start_time5),convert_to_sec(end_time5))
-      clip6=final_clip.subclip(convert_to_sec(start_time6),convert_to_sec(end_time6))
-      final_clip=concatenate_videoclips([clip1, clip2,clip3,clip4,clip5,clip6], method="compose")
-    
+    #final_clip=final_clip.subclip(start_time,end_time)
     # Set the output file name and save the final clip
     output_file = "output_video.mp4"
     #final_clip.write_videofile(output_file, codec="libx264")
-    final_clip.write_videofile(output_file,audio_codec='aac',codec='libx264')
+    final_clip.write_videofile(output_file)
     video_file=open("output_video.mp4",'rb')
     #video_bytes = output_file.read()
     #st.video(video_bytes) 
@@ -360,10 +312,10 @@ def make_video(vc,ht,ft,src):
 
 clicked = st.button('Create Video')
 if(clicked is True):
-  
+    
   vf = VideoFileClip(tfile.name)
   #vf = VideoFileClip('video.mp4')
-  print('create video clicked')
+    
   make_video(vf,header,footer,source)
 
     
