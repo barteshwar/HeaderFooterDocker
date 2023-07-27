@@ -1,6 +1,6 @@
-decorator==4.0.2
 moviepy==1.0.0
 Pillow==9.5.0
 gizeh
 fonttools
 ffmpeg
+decorator==4.0.2
