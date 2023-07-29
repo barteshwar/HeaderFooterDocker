@@ -2,4 +2,4 @@ moviepy
 Pillow==9.5.0
 gizeh
 fonttools
-pygame
+decorator==4.3.2
