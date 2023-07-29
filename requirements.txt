@@ -1,5 +1,5 @@
 moviepy
-ffmpeg
+ffmpeg-imageio
 Pillow==9.5.0
 gizeh
 fonttools
