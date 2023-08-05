@@ -1,4 +1,4 @@
 moviepy
 Pillow==9.5.0
 gizeh
-decorator==4.4.2
+decorator
