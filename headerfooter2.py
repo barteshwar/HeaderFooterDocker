@@ -353,9 +353,9 @@ def make_video(vc,ht,ft,src):
     #st.video(video_bytes)
     #st.video(final_clip)
     #enter the filename with filepath
-    #video_bytes = final_clip.read() #reading the file
+    video_bytes = final_clip.read() #reading the file
     #video_bytes = video_file.read() #reading the file
-    st.video(final_clip) #displaying the video
+    st.video(video_bytes) #displaying the video
     #st.video(final_clip) #displaying the video
 
 clicked = st.button('Create Video')
