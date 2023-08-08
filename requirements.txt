@@ -3,4 +3,5 @@ ffmpeg
 moviepy==1.0.0
 Pillow==9.5.0
 gizeh
+pycharm
 
