@@ -343,7 +343,7 @@ def make_video(vc,ht,ft,src):
       final_clip=concatenate_videoclips([clip1, clip2,clip3,clip4,clip5,clip6], method="compose")
     
     # Set the output file name and save the final clip
-    output_file = "output_video.mp4"
+    #output_file = "output_video.mp4"
     #final_clip.write_videofile(output_file, codec="libx264")
     #final_clip.write_videofile(output_file)
     #video_file=open("output_video.mp4",'rb')
