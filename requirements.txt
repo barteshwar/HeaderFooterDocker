@@ -1,5 +1,5 @@
 decorator==4.4.2
-moviepy==1.0.0
+moviepy
 Pillow==9.5.0
 gizeh
 
