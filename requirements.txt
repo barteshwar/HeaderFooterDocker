@@ -1,6 +1,6 @@
-decorator==4.4.2
-moviepy
+decorator==4.0.2
+moviepy==1.0.3
 Pillow==9.5.0
 gizeh
-decorator==4.4.2
+
 
